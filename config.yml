@@ -18,7 +18,7 @@ site_author: 洛霜
 
 # 文档仓库
 repo_url: https://github.com/exdreamd/qpgdocs
-# repo_name: thinkcloud-exdream/QuecPigeon-Docs
+repo_name: exdreamd/qpgdocs
 
 # 站点源文件路径
 docs_dir: "docs"
@@ -92,7 +92,7 @@ theme:
     - navigation.tabs # 顶部导航栏
     # - navigation.tabs.sticky  # 在滚动页面时保持顶部导航栏始终显示
     - navigation.sections # 左侧栏采用分组而非层级的形式展示
-    - navigation.path # 标题上方的路径显示
+    - navigation.path # 标题上方的路径显示（付费功能）
     - navigation.indexes # 允许针对章节设置单独的主页（概览页）
     - toc.follow # 右侧栏自动滚动，以跟随当前浏览位置
     - navigation.top # 返回顶部按钮
@@ -104,9 +104,9 @@ theme:
     - content.tooltips # 改进的工具提示
 
   # 图标设定
-  # icon:
-  #   # Git 仓库图标
-  #   repo: simple/gitee
+  icon:
+    # Git 仓库图标
+    repo: simple/github
 
 extra:
   # 首次访问时弹出的版权和隐私（cookie）信息
@@ -146,9 +146,10 @@ plugins:
 
   # 基于 Git 的文件更新时间显示
   - git-revision-date-localized:
-      type: timeago # 显示格式
+      type: datetime # 显示格式
       timezone: Asia/Shanghai # 时区
-      fallback_to_build_date: true # 在无法使用 Git 时采用编译时间
+      locale: zh # 语言
+      fallback_to_build_date: false # 在无法使用 Git 时启用，采用编译时间
       enable_creation_date: true # 显示文档首次创建时间
 
   # 引入外部文件
