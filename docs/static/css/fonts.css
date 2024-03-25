@@ -1,0 +1,7 @@
+:root {
+  --md-text-font: "LXGW WenKai Screen", "等线", "DengXian", "Microsoft YaHei",
+    "微软雅黑", PingFangSC-Regular, sans-serif;
+  --md-code-font: "Cascadia Mono", "Lucida Console", Consolas, "Courier New",
+    "等线", "DengXian", PingFangSC-Regular, "Microsoft YaHei", "微软雅黑",
+    Courier, monospace;
+}

@@ -1,0 +1,231 @@
+# 站点名称
+site_name: QuecPigeon Documentation
+
+# 站点域名
+site_url: https://note.qpy.wiki
+
+# 站点版权信息
+copyright: |
+  Copyright &copy; 2021 - 2024, ThinkCloud & 洛霜.
+  <a href="https://beian.miit.gov.cn/">苏ICP备20023496号-2</a>
+
+# 站点描述
+site_description: |
+  个人性质的文档撰写和分享站点，旨在帮助用户提升 QuecPython 开发的效率
+
+# 站点作者
+site_author: 洛霜
+
+# 文档仓库
+repo_url: https://github.com/exdreamd/qpgdocs
+# repo_name: thinkcloud-exdream/QuecPigeon-Docs
+
+# 站点源文件路径
+docs_dir: "docs"
+
+# 编译结果存储路径
+site_dir: "build"
+
+# 外部 CSS 文件
+extra_css:
+  # 字体配置
+  - static/css/fonts.css
+  # 字体文件
+  - static/fonts/LXGWWenKaiScreen/result.css
+  - static/fonts/DengXianRegular/result.css
+  - static/fonts/LXGWWenKaiMonoScreen/result.css
+
+# # 外部 Javascript 文件
+# extra_javascript:
+#   - static/js/extra.js
+
+# 主题设置
+theme:
+  # 主题名称（请勿修改）
+  name: material
+  # 覆盖设置的路径
+  custom_dir: overrides
+  # 颜色设置
+  palette:
+    # 明亮模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      # 顶栏颜色
+      primary: red
+      # 交互元素颜色
+      accent: red
+      # 切换按钮
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: 打开暗黑模式
+
+    # 暗黑模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      # 顶栏颜色
+      primary: black
+      # 交互元素颜色
+      accent: blue
+      # 切换按钮
+      toggle:
+        icon: material/toggle-switch
+        name: 关闭暗黑模式
+
+  # 字体设置
+  # 禁止加载 Google Fonts
+  # 通过 CSS 加载服务器本地字体
+  font: false
+
+  # 语言设置
+  # 具体语言代码和多语言选项请参见官网
+  language: zh
+
+  # Logo 图片
+  logo: static/imgs/quectel.png
+  favicon: static/imgs/quectel.png
+
+  # 功能设置
+  features:
+    - navigation.instant # 特色功能：即时加载(需要同时配置 site_url 才可用)
+    - navigation.instant.progress # 加载进度指示
+    - navigation.tracking # 自动更新地址栏中的 URL 到页面的当前访问位置
+    - navigation.tabs # 顶部导航栏
+    # - navigation.tabs.sticky  # 在滚动页面时保持顶部导航栏始终显示
+    - navigation.sections # 左侧栏采用分组而非层级的形式展示
+    - navigation.path # 标题上方的路径显示
+    - navigation.indexes # 允许针对章节设置单独的主页（概览页）
+    - toc.follow # 右侧栏自动滚动，以跟随当前浏览位置
+    - navigation.top # 返回顶部按钮
+    - search.suggest # 启用搜索建议
+    - search.highlight # 启用搜索结果高亮显示
+    # - search.share # 允许用户复制和分享搜索结果的链接
+    - content.code.copy # 代码复制按钮
+    - content.code.annotate # 允许在代码块内部增加注解
+    - content.tooltips # 改进的工具提示
+
+  # 图标设定
+  # icon:
+  #   # Git 仓库图标
+  #   repo: simple/gitee
+
+extra:
+  # 首次访问时弹出的版权和隐私（cookie）信息
+  consent:
+    title: 版权和合规性声明
+    description: |
+      <div>
+        <ul>
+          <li>
+            “移远”，“Quectel”，“QuecOpen”，“QuecPython” 及相关图形是上海移远通信技术股份有限公司的商标或注册商标。
+          </li>
+          <li>
+            本系列文档不是上海移远通信技术股份有限公司的官方资料，不代表上海移远通信技术股份有限公司的任何立场及观点。
+          </li>
+          <li>
+            本系列文档属于非盈利性质的公开文档，仅为信息参考之目的提供，不包含任何明示或默示的知识产权许可，也不表示有任何明示或默示的保证，包括但不限于满足任何特殊目的、不侵权或性能。
+          </li>
+          <li>
+            在任何情况下，上海移远通信技术股份有限公司及其他关联商业实体、文档作者和参与贡献者均不负责任何与本系列文档相关的直接或间接的、任何伤害或损失。
+          </li>
+        </ul>
+      </div>
+    actions:
+      - accept
+      - reject
+
+# 插件功能
+plugins:
+  # Material for MkDocs 自带的搜索功能
+  - search:
+      enabled: true # 启用
+      lang: # 语言支持
+        - zh
+        - en
+      # 自定义中文分词引擎字典
+      # jieba_dict: docs/static/utils/dict.txt
+
+  # 基于 Git 的文件更新时间显示
+  - git-revision-date-localized:
+      type: timeago # 显示格式
+      timezone: Asia/Shanghai # 时区
+      fallback_to_build_date: true # 在无法使用 Git 时采用编译时间
+      enable_creation_date: true # 显示文档首次创建时间
+
+  # 引入外部文件
+  - include-markdown:
+      encoding: utf-8 # 原文件中的默认起始标记符
+      preserve_includer_indent: false # 保留在新文件中的缩进（实现原位插入）
+      dedent: false # 去除原文左侧缩进
+      trailing_newlines: true # 去除原文末尾空行
+      comments: true # 自动增加注释以显示该部分内容为外部引入
+      rewrite_relative_urls: true # 重新生成图片等资源的相对路径
+      heading_offset: 0 # 标题级别调整
+      start: <!--start--> # 原文件中的默认起始标记符
+      end: <!--end--> # 原文件中的默认起始标记符
+
+  # 在单独的文件中配置导航页面
+  - literate-nav:
+      nav_file: CONTENTS.md
+
+# Markdown 语法扩展
+markdown_extensions:
+  # Python Markdown 配置项
+
+  - abbr # 缩写
+  - admonition # 各种级别的警告
+  - attr_list # 网格、按钮和其他高级格式
+  - def_list # 定义列表，用于展示函数参数
+  - footnotes # 页面底部的脚注
+  - md_in_html # 允许在 HTML 内部编写 Markdown，图片标题和网格会用到
+
+  # - toc:  # 目录生成功能
+  #     permalink: true
+
+  - tables # 表格功能
+
+  # Python Markdown Extensions 配置项
+
+  # - pymdownx.arithmatex: # 渲染数学公式（暂不启用，未实现该插件所需的 JS 本地加载）
+  #     generic: true
+
+  # - pymdownx.betterem: # 智能加粗和斜体（不好用）
+  #     smart_enable: all
+
+  # - pymdownx.critic # 突出显示(强调)
+  - pymdownx.caret # 上标
+  - pymdownx.details # 折叠块
+
+  - pymdownx.emoji: # emoji 表情支持
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - pymdownx.highlight: # 代码高亮（需要同时开启 pymdownx.superfences）
+      use_pygments: true # 使用 pygments 提供语法高亮
+      pygments_lang_class: true # 以独立的 class 封装代码块，以便提供美化
+      auto_title: true # 为代码块添加标题，指示语言类型
+      # linenums: true # 为所有代码添加行号
+      linenums_style: pymdownx-inline # 添加行号的形式（是否放在行内）
+      line_spans: __span # 用 span 包围每一行（用于实现单行高亮）
+
+  - pymdownx.inlinehilite # 行内代码高亮
+  - pymdownx.keys # 键盘按键显示
+  - pymdownx.mark # 字符高亮显示
+  - pymdownx.smartsymbols # 将某些字符序列转换为相应的符号，例如版权符号或分数
+  - pymdownx.snippets # 使用简单语法将任意文件中的内容嵌入到文档
+
+  - pymdownx.superfences: # 超级围栏
+      custom_fences: # 增加流程图支持
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed: # 允许使用内容选项卡
+      alternate_style: true # 在移动端使用左右滚动式选项卡标题
+      slugify: !!python/object/apply:pymdownx.slugs.slugify # 优化链接生成
+        kwds:
+          case: lower
+
+  # - pymdownx.tasklist: # 任务列表
+  #     custom_checkbox: true
+
+  - pymdownx.tilde # 下标和删除线
