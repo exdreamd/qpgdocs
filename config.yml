@@ -102,6 +102,7 @@ theme:
     - content.code.copy # 代码复制按钮
     - content.code.annotate # 允许在代码块内部增加注解
     - content.tooltips # 改进的工具提示
+    - navigation.footer # 在页面底部显示上下页按钮
 
   # 图标设定
   icon:
@@ -149,7 +150,7 @@ plugins:
       type: datetime # 显示格式
       timezone: Asia/Shanghai # 时区
       locale: zh # 语言
-      fallback_to_build_date: false # 在无法使用 Git 时启用，采用编译时间
+      fallback_to_build_date: true # 在无法使用 Git 时启用，采用编译时间
       enable_creation_date: true # 显示文档首次创建时间
 
   # 引入外部文件
